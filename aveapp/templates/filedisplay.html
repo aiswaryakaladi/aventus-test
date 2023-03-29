@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Designation</th>
+        <th>Field Name</th>
+        <th>Edit/Delete</th>
+    </tr>
+    {% for i,j,k,l,m,n,p in list %}
+
+    <tr>
+        <td><img src="{% static i %}" height="200px" width="200px"></td>
+        <td>{{j}}</td>
+        <td>{{k}}</td>
+        <td>{{l}}</td>
+        <td>{{m}}</td>
+        <td>{{n}}</td>
+        <td>
+            <a href="http://127.0.0.1:8000/aveapp/edit1/{{p}}" class="btn btn-success">Edit</a>
+            <a href="http://127.0.0.1:8000/aveapp/delete1/{{p}}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+</body>
+</html>
